@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    
+    "storageAccounts_generalaccount_name": {
+      "defaultValue": "generalaccount",
+      "type": "string"
+    },
+    "storageAccounts_myblobaccount1982_name": {
+      "defaultValue": "myblobaccount1982",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "comments": "Generalized from resource: '/subscriptions/6ee18b4f-c2d0-4b72-b89d-80171ffa9085/resourceGroups/bukkastorage/providers/Microsoft.Storage/storageAccounts/generalaccount'.",
+      "type": "Microsoft.Storage/storageAccounts",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "kind": "Storage",
+      "name": "[parameters('storageAccounts_generalaccount_name')]",
+      "apiVersion": "2016-01-01",
+      "location": "westeurope",
+      "tags": {},
+      "scale": null,
+      "properties": {},
+      "dependsOn": []
+    },
+    {
+      "comments": "Generalized from resource: '/subscriptions/6ee18b4f-c2d0-4b72-b89d-80171ffa9085/resourceGroups/bukkastorage/providers/Microsoft.Storage/storageAccounts/myblobaccount1982'.",
+      "type": "Microsoft.Storage/storageAccounts",
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+      },
+      "kind": "BlobStorage",
+      "name": "[parameters('storageAccounts_myblobaccount1982_name')]",
+      "apiVersion": "2016-01-01",
+      "location": "westeurope",
+      "tags": {},
+      "scale": null,
+      "properties": {
+        "accessTier": "Cool"
+      },
+      "dependsOn": []
+    }
+  ],
+  "variables": {}
+}
